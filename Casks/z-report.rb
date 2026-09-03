@@ -1,10 +1,10 @@
 cask "z-report" do
-  version "0.1.0"
-  sha256 "38de150d8e98cd8c736c8e450981f381ccb55244279cfeffb28f5fa95d2cb679"
+  version "0.2.0"
+  sha256 "60ce73d83c14ba5e599e2685c437884b41b264b5953a8e1e6621d97710c2d670"
 
   url "https://github.com/alikayhan/z-report-releases/releases/download/v#{version}/Z-Report_#{version}_aarch64.dmg"
   name "Z Report"
-  desc "Accomplishment journal for Claude Code sessions"
+  desc "Accomplishment journal for Claude Code and Codex sessions"
   homepage "https://github.com/alikayhan/z-report-releases"
 
   auto_updates true
@@ -25,9 +25,11 @@ cask "z-report" do
   ]
 
   caveats <<~EOS
-    Z Report needs the Claude Code CLI and works with any install of it
-    (native installer, npm, or Homebrew). If you don't have it yet:
+    Z Report needs the Claude Code CLI or the Codex CLI, signed in, to run
+    evaluations. It uses Claude Code when present and falls back to Codex.
+    Any install of either works; with Homebrew:
 
       brew install --cask claude-code
+      brew install --cask codex
   EOS
 end
